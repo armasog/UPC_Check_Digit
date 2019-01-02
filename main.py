@@ -25,7 +25,8 @@ class TestSuite(unittest.TestCase):
 def check_digit_generator(first_11_digits):
     # Argument first_11_digits expected as string because Python 3 generates a syntax error when int values are passed
     # with leading zeroes
-    odd_positions = sum([int(x) for x in first_11_digits[0::2]])
+    odd_positions = sum([int(x) for x in first_11_digits[0::2]]) # Instructions define as odd position since not using
+    # 0 based indexing
     even_positions = sum([int(x) for x in first_11_digits[1::2]])
     m = (odd_positions * 3 + even_positions) % 10
     return m if m == 0 else 10 - m
